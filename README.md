@@ -2,6 +2,7 @@ Node.js
 =======
 
 [![Gitter](https://badges.gitter.im/Join Chat.svg)](https://gitter.im/nodejs/node?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+[![Build Status](https://travis-ci.org/chidelmun/node.svg?branch=master)](https://travis-ci.org/chidelmun/node)
 
 The Node.js project is supported by the
 [Node.js Foundation](https://nodejs.org/en/foundation/). Contributions,
