@@ -3,6 +3,9 @@ language: cpp
 compiler:
   - gcc
 
+before_script:
+  - ./configure
+
 script: make && make test
 notifications:
   email: false
