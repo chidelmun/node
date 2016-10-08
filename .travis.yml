@@ -1,0 +1,16 @@
+language: cpp
+
+compiler:
+  - gcc
+
+before_script:
+  - ./configure
+
+script: make && make test
+notifications:
+  email: false
+  irc:
+    channels:
+    - chat.freenode.net#ublab
+    template:
+    - "%{repository}/%{branch} (%{commit} - %{author}): %{build_url}: %{message}"
