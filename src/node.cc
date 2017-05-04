@@ -6,6 +6,8 @@
 #include "node_javascript.h"
 #include "node_version.h"
 #include "node_internals.h"
+#include <iostream>
+#include <csignal>
 
 #if defined HAVE_PERFCTR
 #include "node_counters.h"
@@ -698,6 +700,11 @@ const char *signo_string(int signo) {
 
 
 // Convenience methods
+
+void SignalHandler(int sig){
+  std::cout << "Are you sure you want to ABORT? Y/N" << std::endl;
+
+}
 
 
 void ThrowError(v8::Isolate* isolate, const char* errmsg) {
@@ -4117,7 +4124,8 @@ int Start(int argc, char** argv) {
   PlatformInit();
 
   CHECK_GT(argc, 0);
-
+  std::cout << "** Welcome to Node REPL  By Delveri Chick **" << std::endl;
+  signal(SIGINT, &SignalHandler);
   // Hack around with the argv pointer. Used for process.title = "blah".
   argv = uv_setup_args(argc, argv);
 
